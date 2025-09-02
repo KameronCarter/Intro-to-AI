@@ -18,3 +18,9 @@ scatter.smooth(x=cars$mpg, y=cars$disp, main="SpeedVsDistance")
 #Calculate correation value between mpg and disp
 cor(cars$mpg, cars$disp)
 [1] -0.8475514
+
+#Split training and testing data for regression
+training_data <- cars[1:16,]
+test_data <- cars[17:32,]
+
+#Build a regression model
