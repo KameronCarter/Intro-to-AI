@@ -24,3 +24,17 @@ training_data <- cars[1:16,]
 test_data <- cars[17:32,]
 
 #Build a regression model
+regression_result <- lm(mpg ~ disp, data=training_data)
+
+Call:
+lm(formula = mpg ~ disp, data = training_data)
+
+Coefficients:
+(Intercept)         disp  
+   26.28141     -0.03222  
+
+#Predict regression function on trst_data
+prediction_result <- predict(regression_result, test_data)
+
+#REseluts of predictions
+actal_prediction <- data.frame(cbind(actual=training_data$mpg,predicteds=prediction_result))
